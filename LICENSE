@@ -1,0 +1,115 @@
+# Proprietary Source-Available License (PSAL-1.0)
+
+**Copyright (c) 2026 Jonathan Hurtado (JonathanHurtado). All rights reserved.**
+
+This is a proprietary license. It is **not** an open-source license and it is not
+approved by the Open Source Initiative (OSI). The source code is published so that
+users, researchers and security reviewers can inspect and audit it.
+
+## 1. Definitions
+
+- **"Software"** means the source code, build scripts, documentation, artwork and
+  any other files distributed in this repository.
+- **"Author"** means Jonathan Hurtado (JonathanHurtado), the copyright holder.
+- **"You"** means the individual or legal entity exercising rights under this
+  license.
+
+## 2. Limited permission for inspection and security auditing
+
+Subject to the terms of this license, the Author grants You a limited,
+non-exclusive, non-transferable, revocable and royalty-free permission to:
+
+1. read, view and study the Software;
+2. clone the repository and compile the Software locally;
+3. run the compiled Software on devices that You own or control, solely to
+   evaluate it or to perform a security, privacy or interoperability audit;
+4. create forks through GitHub's built-in fork feature solely for review and
+   audit purposes, provided that such forks are not distributed, published as a
+   product, or used for any purpose prohibited in Section 3.
+
+No other rights are granted, whether by implication, estoppel or otherwise.
+
+## 3. Restrictions
+
+Unless You have a separate written commercial license signed by the Author, You
+may **not**:
+
+1. use the Software in production, in a commercial product, or to provide a
+   service to third parties;
+2. copy, reproduce, distribute, publish, upload, sublicense, sell, rent, lease,
+   lend or otherwise make the Software available to any third party;
+3. modify, adapt, translate, reverse engineer (except to the extent permitted by
+   mandatory law), merge or create derivative works from the Software;
+4. incorporate the Software, in whole or in part, into another product;
+5. remove, obscure or alter any copyright, license or attribution notice;
+6. use the name, logo or trademarks of the Author or of the Software to endorse
+   or promote any product without prior written permission;
+7. use the Software for training machine-learning models intended to reproduce
+   its source code or functionality;
+8. use the Software in any way that violates applicable law.
+
+## 4. Contributions
+
+By submitting a pull request, patch, issue or any other contribution, You confirm
+that You have the legal right to do so and You grant the Author a perpetual,
+worldwide, irrevocable, royalty-free, transferable and sublicensable license to
+use, reproduce, modify, distribute, relicense and otherwise exploit Your
+contribution, in source or binary form. You retain copyright over Your
+contribution, but You do not acquire any rights over the Software.
+
+The Author is not obliged to accept any contribution.
+
+## 5. Third-party components
+
+This repository may reference or depend on third-party components that are
+distributed under their own licenses. Those components remain governed by their
+respective licenses. Nothing in this license grants rights over third-party
+components, trademarks or other intellectual property of third parties.
+
+## 6. No warranty
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. THE AUTHOR DOES NOT WARRANT
+THAT THE SOFTWARE WILL BE ERROR-FREE, SECURE, OR FIT FOR ANY PARTICULAR PURPOSE.
+
+## 7. Limitation of liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE AUTHOR SHALL NOT BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, CONSEQUENTIAL OR
+PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF DATA, LOSS OF PROFITS,
+HEARING DAMAGE, DEVICE DAMAGE OR BUSINESS INTERRUPTION, ARISING OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THIS LICENSE, EVEN IF THE AUTHOR HAS BEEN ADVISED
+OF THE POSSIBILITY OF SUCH DAMAGES.
+
+## 8. Termination
+
+This license terminates automatically if You breach any of its terms. Upon
+termination, You must stop using the Software and destroy all copies in Your
+possession or control. Sections 3, 4, 6, 7 and 9 survive termination.
+
+## 9. Commercial licensing
+
+Commercial use, redistribution, integration into another product or any use not
+expressly permitted by this license requires a separate written agreement with the
+Author. Contact:
+
+**JonathanHurtadoDev@proton.me**
+
+## 10. General
+
+If any provision of this license is found unenforceable, the remaining provisions
+shall remain in full force and effect. This license is the entire agreement
+between You and the Author regarding the Software and supersedes any prior
+agreement on the same subject.
+
+---
+
+## Resumen en español (informativo, no vinculante)
+
+Este código es **propietario** y se publica únicamente para que pueda ser
+**auditado**. Puedes leerlo, clonarlo y compilarlo para revisarlo o probarlo en
+tus propios dispositivos. **No** puedes usarlo en producción, modificarlo,
+redistribuirlo, venderlo, incluirlo en otro producto ni crear trabajos derivados
+sin un acuerdo comercial escrito. El software se entrega **sin garantía**. Para
+licencias comerciales: **JonathanHurtadoDev@proton.me**.

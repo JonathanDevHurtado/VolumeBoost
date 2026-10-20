@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Seguridad
+    url: https://github.com/JonathanDevHurtado/VolumeBoost/security/policy
+    about: No reportes vulnerabilidades en issues públicos.
+  - name: Documentación
+    url: https://github.com/JonathanDevHurtado/VolumeBoost/tree/main/docs
+    about: Arquitectura, compilación, verificación y problemas.

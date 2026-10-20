@@ -1,0 +1,42 @@
+name: Propuesta
+description: Idea o mejora para el proyecto
+title: "[feat] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: ¿Qué problema resuelve?
+      description: Describe la necesidad, no solo la solución.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Propuesta
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas consideradas
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Ámbito
+      options:
+        - UI / accesibilidad
+        - Audio / efecto
+        - Servicio / notificaciones
+        - Documentación
+        - Build / CI
+        - Otro
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Comprobaciones
+      options:
+        - label: He buscado issues duplicados
+          required: true

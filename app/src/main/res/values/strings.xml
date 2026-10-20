@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Volume Boost</string>
+    <string name="title" formatted="false">Volume Boost</string>
+    <string name="subtitle" formatted="false">De 100% (máximo del teléfono) hasta 150%</string>
+
+    <!-- Medidor -->
+    <string name="gauge_desc">Volumen al %1$d por ciento</string>
+    <string name="sub_normal">volumen normal</string>
+    <string name="sub_boost">+%1$.1f dB</string>
+    <string name="minus_desc">Bajar 5 por ciento</string>
+    <string name="plus_desc">Subir 5 por ciento</string>
+    <string name="step_caption" formatted="false">pasos de 5%</string>
+    <string name="minus_sign" translatable="false">−</string>
+    <string name="plus_sign" translatable="false">+</string>
+    <string name="chip_100" translatable="false">100%</string>
+    <string name="chip_110" translatable="false">110%</string>
+    <string name="chip_125" translatable="false">125%</string>
+    <string name="chip_150" translatable="false">150%</string>
+
+    <!-- Mantener presionado -->
+    <string name="hold_title">Mantén presionado</string>
+    <string name="hold_down">⬇  Bajar</string>
+    <string name="hold_up">🔥  Subir</string>
+    <string name="hold_hint">Sube o baja poco a poco (unos 10 puntos por segundo). Suelta para quedarte donde estás.</string>
+
+    <!-- Ajustes -->
+    <string name="sound_switch">Sonidos de aviso</string>
+    <string name="sound_hint">Tono más agudo = más volumen. Campanita especial al llegar al máximo.</string>
+    <string name="mode_switch">Modo compatible (por app)</string>
+    <string name="mode_hint">Actívalo solo si en modo global no notas ningún cambio. Refuerza cada app de música que lo permita; reinicia la reproducción después de activarlo.</string>
+
+    <!-- Volumen del sistema -->
+    <string name="vol_label">Volumen multimedia del teléfono: %1$d%%</string>
+    <string name="vol_ok" formatted="false">Al máximo ✓ El 100% es el tope real del teléfono</string>
+    <string name="vol_low" formatted="false">Súbelo al máximo para que el 100% sea el tope real del teléfono</string>
+    <string name="vol_btn">Poner al máximo</string>
+
+    <!-- Prueba -->
+    <string name="test_start">▶  Probar con sonido de prueba</string>
+    <string name="test_stop">■  Detener prueba</string>
+    <string name="test_fail">No se pudo reproducir el sonido de prueba.</string>
+
+    <!-- Estado -->
+    <string name="status_idle">Sin refuerzo: el volumen es el normal del teléfono.</string>
+    <string name="status_global">Refuerzo global activo: +%1$.1f dB sobre todo el audio.</string>
+    <string name="status_global_failed">El modo global no está disponible en este teléfono. Usando el modo por app (%1$d sesiones de audio enlazadas). Si no cambia nada, reinicia la reproducción en tu app de música.</string>
+    <string name="status_per_app">Modo por app: %1$d sesiones de audio reforzadas. Si no cambia nada, reinicia la reproducción en tu app de música.</string>
+
+    <!-- Servicio / notificación -->
+    <string name="notif_channel">Estado del refuerzo</string>
+    <string name="notif_title">Volume Boost activo</string>
+    <string name="notif_text">Refuerzo al %1$d%% (+%2$.1f dB)</string>
+    <string name="notif_idle">Refuerzo desactivado</string>
+    <string name="notif_action" formatted="false">Volver a 100%</string>
+    <string name="service_fail">No se pudo mantener el refuerzo en segundo plano: déjalo con la app abierta.</string>
+
+    <!-- Aviso inicial -->
+    <string name="warn_title">Cuida tus oídos y tus parlantes</string>
+    <string name="warn_msg" formatted="false">Por encima del 100% el sonido puede distorsionarse y, con audífonos, ser peligrosamente fuerte. Empieza bajito, sube poco a poco y no lo uses mucho tiempo al máximo.</string>
+    <string name="warn_ok">Entendido</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#FFFF9F1C</color>
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#FFB8C0D8</color>
+    <color name="text_ok">#FF6EE7A8</color>
+    <color name="text_warn">#FFFFB454</color>
+    <color name="on_accent">#FF1A1033</color>
+
+    <color name="gauge_green">#FF3DDC84</color>
+    <color name="gauge_yellow">#FFFFD54F</color>
+    <color name="gauge_orange">#FFFF8A3D</color>
+    <color name="gauge_red">#FFFF3D57</color>
+    <color name="gauge_track">#26FFFFFF</color>
+    <color name="gauge_tick">#66FFFFFF</color>
+    <color name="gauge_label">#99FFFFFF</color>
+
+    <color name="ic_launcher_background">#FF14172B</color>
+</resources>
