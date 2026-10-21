@@ -4,6 +4,24 @@ Todos los cambios relevantes se documentan aquí. El formato sigue
 [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y el versionado
 [SemVer](https://semver.org/lang/es/).
 
+## [1.2.0] — 2026-10-21
+
+Versión de distribución: mismo comportamiento que 1.1.0, ahora con paquete de
+release firmado y documentación descargable.
+
+### Añadido
+
+- APK de release firmado y AAB para Google Play.
+- Paquete de documentación `VolumeBoost-1.2.0-docs.zip`.
+- `SHA256SUMS.txt` para verificar la integridad de las descargas.
+- Sección de descarga y guía de publicación en el README.
+- [`docs/PUBLICAR.md`](docs/PUBLICAR.md) con el proceso de release y custodia de claves.
+
+### Cambiado
+
+- `versionCode` 3 y `versionName` 1.2.0.
+- README y verificación actualizados con los artefactos de release.
+
 ## [1.1.0] — 2026-10-20
 
 ### Añadido
@@ -31,5 +49,6 @@ Todos los cambios relevantes se documentan aquí. El formato sigue
 - Pruebas unitarias de `BoostMath`.
 - Scripts de compilación e instalación para Fedora 44.
 
+[1.2.0]: https://github.com/JonathanDevHurtado/VolumeBoost/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/JonathanDevHurtado/VolumeBoost/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/JonathanDevHurtado/VolumeBoost/releases/tag/v1.0.0

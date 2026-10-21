@@ -22,8 +22,8 @@ android {
         applicationId = "com.volumeboost.app"
         minSdk = 26          // Android 8.0: cubre de sobra al Redmi Note 13 Pro (Android 13+)
         targetSdk = 35
-        versionCode = 2
-        versionName = "1.1.0"
+        versionCode = 3
+        versionName = "1.2.0"
     }
 
     signingConfigs {

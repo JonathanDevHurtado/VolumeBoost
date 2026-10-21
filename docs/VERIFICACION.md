@@ -15,15 +15,33 @@
 
 ```bash
 export JAVA_HOME=/ruta/al/jdk-17
-./gradlew --no-daemon assembleDebug testDebugUnitTest
-./gradlew --no-daemon lintDebug
+./gradlew --no-daemon clean testDebugUnitTest lintDebug
+./gradlew --no-daemon assembleRelease bundleRelease
 ```
 
-Resultado de la última ejecución (2026-10-20):
+Resultado de la última ejecución (2026-10-21):
 
-- `assembleDebug`: **BUILD SUCCESSFUL**
 - `testDebugUnitTest`: **BUILD SUCCESSFUL**, 17 pruebas
-- `lintDebug`: se ejecuta en CI y en local; revisar el informe para avisos nuevos
+- `lintDebug`: **BUILD SUCCESSFUL**, sin errores nuevos
+- `assembleRelease`: **BUILD SUCCESSFUL**, APK firmado
+- `bundleRelease`: **BUILD SUCCESSFUL**, AAB firmado
+
+## Release 1.2.0
+
+| Artefacto | Tamaño | SHA-256 |
+|---|---:|---|
+| `VolumeBoost-1.2.0.apk` | 104 KB | `3079061d4f22a87146d1d6fffc0d919bf1c3e591345700afd0b538e87e9c9306` |
+| `VolumeBoost-1.2.0.aab` | 121 KB | `e6f9399bd12e03514488e4bf46dcf0bdf8514fc4ea645032b0b5eaafa417403f` |
+
+Firma comprobada con `apksigner verify --print-certs`:
+
+```
+Signer #1 certificate DN: CN=Jonathan Hurtado, OU=VolumeBoost,
+  O=JonathanDevHurtado, L=Bogota, C=CO
+```
+
+El AAB también pasa `jarsigner -verify`. La clave de firma no está en el
+repositorio; se guarda fuera y `keystore.properties` está ignorado por Git.
 
 ## Qué cubren las pruebas
 

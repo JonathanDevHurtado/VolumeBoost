@@ -6,7 +6,8 @@
   <a href="https://github.com/JonathanDevHurtado/VolumeBoost/actions/workflows/android.yml"><img src="https://github.com/JonathanDevHurtado/VolumeBoost/actions/workflows/android.yml/badge.svg" alt="Android CI"/></a>
   <img src="https://img.shields.io/badge/Android-8.0%2B%20(API%2026)-3DDC84?logo=android&logoColor=white" alt="Android 8.0+"/>
   <img src="https://img.shields.io/badge/Kotlin-2.0.21-7F52FF?logo=kotlin&logoColor=white" alt="Kotlin 2.0.21"/>
-  <img src="https://img.shields.io/badge/Versi%C3%B3n-1.1.0-FF9F1C" alt="Versión 1.1.0"/>
+  <img src="https://img.shields.io/badge/Versi%C3%B3n-1.2.0-FF9F1C" alt="Versión 1.2.0"/>
+  <a href="https://github.com/JonathanDevHurtado/VolumeBoost/releases/latest"><img src="https://img.shields.io/github/v/release/JonathanDevHurtado/VolumeBoost?style=flat-square&label=release&color=FF9F1C" alt="Última release"/></a>
   <img src="https://img.shields.io/badge/Licencia-Propietaria%20(source--available)-8E24AA" alt="Licencia propietaria"/>
 </p>
 
@@ -24,8 +25,29 @@ Hecho para el **Xiaomi Redmi Note 13 Pro 4G (Helio G99 Ultra)** y compatible con
 
 ---
 
+## 📦 Descarga
+
+[![Última release](https://img.shields.io/github/v/release/JonathanDevHurtado/VolumeBoost?style=for-the-badge&label=⬇️%20Descargar)](https://github.com/JonathanDevHurtado/VolumeBoost/releases/latest)
+
+| Archivo | Uso |
+|---|---|
+| `VolumeBoost-1.2.0.apk` | Instalar en el teléfono (firmado, listo para usar) |
+| `VolumeBoost-1.2.0.aab` | Subir a Google Play |
+| `VolumeBoost-1.2.0-docs.zip` | Documentación completa sin conexión |
+| `SHA256SUMS.txt` | Verificar la integridad de las descargas |
+
+```bash
+sha256sum -c SHA256SUMS.txt
+```
+
+> Requiere **Android 8.0 (API 26)** o superior. El APK está firmado con una clave
+> de release; no es un build de depuración.
+
+---
+
 ## Índice
 
+- [Descarga](#-descarga)
 - [Qué hace](#qué-hace)
 - [Estado de verificación](#estado-de-verificación)
 - [Cómo funciona](#cómo-funciona)
@@ -206,6 +228,7 @@ VolumeBoost/
 | [`docs/PRIVACIDAD.md`](docs/PRIVACIDAD.md) | Qué datos usa (ninguno) y por qué |
 | [`docs/SOLUCION_PROBLEMAS.md`](docs/SOLUCION_PROBLEMAS.md) | Fallos típicos al compilar y en HyperOS/MIUI |
 | [`docs/COMPILAR_FEDORA44.md`](docs/COMPILAR_FEDORA44.md) | Guía paso a paso en Fedora |
+| [`docs/PUBLICAR.md`](docs/PUBLICAR.md) | Firma, artefactos, checksums y publicación |
 
 ---
 
