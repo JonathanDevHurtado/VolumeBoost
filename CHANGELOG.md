@@ -4,6 +4,26 @@ Todos los cambios relevantes se documentan aquí. El formato sigue
 [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y el versionado
 [SemVer](https://semver.org/lang/es/).
 
+## [Unreleased]
+
+### Añadido
+
+- Diseño de dos columnas para pantallas en horizontal.
+- Iconos vectoriales para sumar, restar, subir, bajar, reproducir, detener, volumen, sonido y modo.
+- `android:fullBackupContent="false"` para completar la política de copias de seguridad.
+
+### Cambiado
+
+- Rediseño de la interfaz: cabecera de identidad, medidor con estado, atajos, control fino y
+  tarjetas separadas de refuerzo manual, volumen, preferencias y prueba.
+- README, guía de publicación, verificación y seguridad sin emojis.
+- El medidor coloca las etiquetas 100 / 150 junto al arco y la de 125 dentro, separadas del subtítulo.
+
+### Corregido
+
+- Punto rojo al inicio del arco del medidor por el remate del degradado circular.
+- El subtítulo del medidor se solapaba con las etiquetas de los extremos.
+
 ## [1.2.0] — 2026-10-21
 
 Versión de distribución: mismo comportamiento que 1.1.0, ahora con paquete de

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipToPadding="false"
     android:fillViewport="true"
     android:fitsSystemWindows="true"
     android:overScrollMode="never"
@@ -11,29 +13,57 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingTop="12dp"
-        android:paddingRight="20dp"
+        android:paddingStart="20dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="20dp"
         android:paddingBottom="28dp">
 
-        <!-- Encabezado -->
-        <TextView
+        <!-- Cabecera -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/title"
-            android:textColor="@color/text_primary"
-            android:textSize="28sp"
-            android:textStyle="bold" />
+            android:baselineAligned="false"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:gravity="center"
-            android:text="@string/subtitle"
-            android:textColor="@color/text_secondary"
-            android:textSize="14sp" />
+            <FrameLayout
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_logo">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_gravity="center"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_volume_up"
+                    android:tint="@color/on_accent" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title"
+                    android:textColor="@color/text_primary"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/subtitle"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
 
         <!-- Medidor -->
         <com.volumeboost.app.GaugeView
@@ -41,53 +71,50 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="6dp" />
 
-        <!-- Botones - y + -->
+        <!-- Estado actual -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_status"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingStart="14dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="12dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_graphic_eq"
+                android:tint="@color/accent" />
 
             <TextView
-                android:id="@+id/btnMinus"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@drawable/bg_circle_btn"
-                android:contentDescription="@string/minus_desc"
-                android:gravity="center"
-                android:text="@string/minus_sign"
-                android:textColor="@color/text_primary"
-                android:textSize="32sp" />
-
-            <TextView
+                android:id="@+id/tvStatus"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/step_caption"
+                android:accessibilityLiveRegion="polite"
+                android:lineSpacingExtra="2dp"
                 android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
-
-            <TextView
-                android:id="@+id/btnPlus"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@drawable/bg_circle_btn"
-                android:contentDescription="@string/plus_desc"
-                android:gravity="center"
-                android:text="@string/plus_sign"
-                android:textColor="@color/text_primary"
-                android:textSize="32sp" />
         </LinearLayout>
 
         <!-- Atajos -->
+        <TextView
+            style="@style/SectionLabel"
+            android:layout_marginTop="22dp"
+            android:text="@string/section_shortcuts" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:orientation="horizontal">
 
             <TextView
@@ -111,63 +138,170 @@
                 android:text="@string/chip_150" />
         </LinearLayout>
 
+        <!-- Control fino -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_card"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="14dp">
+
+            <ImageView
+                android:id="@+id/btnMinus"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_circle_btn"
+                android:clickable="true"
+                android:contentDescription="@string/minus_desc"
+                android:focusable="true"
+                android:padding="16dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_remove"
+                android:tint="@color/text_primary" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/step_title"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/step_caption"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/btnPlus"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_circle_btn"
+                android:clickable="true"
+                android:contentDescription="@string/plus_desc"
+                android:focusable="true"
+                android:padding="16dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_add"
+                android:tint="@color/text_primary" />
+        </LinearLayout>
+
         <!-- Mantener presionado -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="14dp"
             android:background="@drawable/bg_card"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="18dp">
+
+            <TextView
+                style="@style/SectionLabel"
+                android:text="@string/section_manual" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
                 android:text="@string/hold_title"
                 android:textColor="@color/text_primary"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/holdDown"
-                    android:layout_width="0dp"
-                    android:layout_height="76dp"
-                    android:layout_marginEnd="6dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_hold_down"
-                    android:gravity="center"
-                    android:text="@string/hold_down"
-                    android:textColor="@color/text_primary"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/holdUp"
-                    android:layout_width="0dp"
-                    android:layout_height="76dp"
-                    android:layout_marginStart="6dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_hold_up"
-                    android:gravity="center"
-                    android:text="@string/hold_up"
-                    android:textColor="@color/text_primary"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="4dp"
                 android:text="@string/hold_hint"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/holdDown"
+                    android:layout_width="0dp"
+                    android:layout_height="64dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_hold_down"
+                    android:clickable="true"
+                    android:contentDescription="@string/hold_down"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:duplicateParentState="true"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_arrow_downward"
+                        android:tint="@color/text_primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:duplicateParentState="true"
+                        android:importantForAccessibility="no"
+                        android:text="@string/hold_down"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/holdUp"
+                    android:layout_width="0dp"
+                    android:layout_height="64dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_hold_up"
+                    android:clickable="true"
+                    android:contentDescription="@string/hold_up"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:duplicateParentState="true"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_arrow_upward"
+                        android:tint="@color/text_primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:duplicateParentState="true"
+                        android:importantForAccessibility="no"
+                        android:text="@string/hold_up"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
 
         <!-- Volumen del teléfono -->
@@ -177,34 +311,37 @@
             android:layout_marginTop="14dp"
             android:background="@drawable/bg_card"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="18dp">
 
             <TextView
                 android:id="@+id/tvVolume"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_volume_up"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/accent"
                 android:textColor="@color/text_primary"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvVolumeHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="6dp"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/btnVolume"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="10dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="12dp"
                 android:background="@drawable/bg_pill"
                 android:gravity="center"
                 android:text="@string/vol_btn"
                 android:textColor="@color/text_primary"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -215,64 +352,108 @@
             android:layout_marginTop="14dp"
             android:background="@drawable/bg_card"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="18dp">
+
+            <TextView
+                style="@style/SectionLabel"
+                android:text="@string/section_settings" />
 
             <Switch
                 android:id="@+id/swSound"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:drawableStart="@drawable/ic_notifications"
+                android:drawableTint="@color/accent"
+                android:drawablePadding="12dp"
                 android:minHeight="48dp"
                 android:text="@string/sound_switch"
                 android:textColor="@color/text_primary"
-                android:textSize="16sp" />
+                android:textSize="15sp"
+                android:thumbTint="@color/switch_thumb"
+                android:trackTint="@color/switch_track" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingStart="36dp"
+                android:paddingEnd="0dp"
                 android:text="@string/sound_hint"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="@color/divider" />
 
             <Switch
                 android:id="@+id/swMode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:drawableStart="@drawable/ic_tune"
+                android:drawableTint="@color/accent"
+                android:drawablePadding="12dp"
                 android:minHeight="48dp"
                 android:text="@string/mode_switch"
                 android:textColor="@color/text_primary"
-                android:textSize="16sp" />
+                android:textSize="15sp"
+                android:thumbTint="@color/switch_thumb"
+                android:trackTint="@color/switch_track" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingStart="36dp"
+                android:paddingEnd="0dp"
                 android:text="@string/mode_hint"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp" />
         </LinearLayout>
 
         <!-- Prueba -->
-        <TextView
+        <LinearLayout
             android:id="@+id/btnTest"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginTop="14dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/bg_pill"
+            android:clickable="true"
+            android:contentDescription="@string/test_start"
+            android:focusable="true"
             android:gravity="center"
-            android:text="@string/test_start"
-            android:textColor="@color/text_primary"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
 
-        <!-- Estado -->
+            <ImageView
+                android:id="@+id/btnTestIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_play_arrow"
+                android:tint="@color/accent" />
+
+            <TextView
+                android:id="@+id/btnTestLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:importantForAccessibility="no"
+                android:text="@string/test_start"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
         <TextView
-            android:id="@+id/tvStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:accessibilityLiveRegion="polite"
+            android:layout_marginTop="20dp"
             android:gravity="center"
-            android:textColor="@color/text_secondary"
-            android:textSize="13sp" />
+            android:text="@string/footer"
+            android:textColor="@color/text_muted"
+            android:textSize="11sp" />
     </LinearLayout>
 </ScrollView>

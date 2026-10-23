@@ -149,7 +149,7 @@ class GaugeView @JvmOverloads constructor(
         progressPaint.strokeWidth = stroke
         tickPaint.strokeWidth = side * 0.006f
         valuePaint.textSize = side * 0.25f
-        subPaint.textSize = side * 0.058f
+        subPaint.textSize = side * 0.055f
 
         // El SweepGradient empieza a las 3 en punto; lo giramos para que arranque donde arranca el arco.
         val colors = intArrayOf(green, yellow, orange, red, red)
@@ -176,7 +176,9 @@ class GaugeView @JvmOverloads constructor(
             val inner = outer - stroke * (if (major) 0.75f else 0.4f)
             canvas.drawLine(cx + c * inner, cy + s * inner, cx + c * outer, cy + s * outer, tickPaint)
             if (major) {
-                val lr = radius - stroke * 1.9f
+                // El 125 % va dentro del arco; los extremos, pegados al arco para no
+                // cruzarse con el subtítulo central.
+                val lr = if (i == 5) radius - stroke * 1.9f else radius - stroke * 1.0f
                 val text = when (i) {
                     0 -> "100"
                     5 -> "125"
@@ -193,6 +195,14 @@ class GaugeView @JvmOverloads constructor(
         // Progreso con degradado verde -> amarillo -> naranja -> rojo
         canvas.drawArc(arcRect, START_ANGLE, SWEEP_ANGLE * f, false, progressPaint)
 
+        // Tapa el extremo inicial con el verde del degradado: el remate redondo del arco
+        // muestrea el rojo final del SweepGradient y dejaba un punto rojo al principio.
+        val startRad = Math.toRadians(START_ANGLE.toDouble())
+        val startX = cx + cos(startRad).toFloat() * radius
+        val startY = cy + sin(startRad).toFloat() * radius
+        glowPaint.color = green
+        canvas.drawCircle(startX, startY, stroke * 0.5f, glowPaint)
+
         // Perilla al final del progreso
         val endRad = Math.toRadians((START_ANGLE + SWEEP_ANGLE * f).toDouble())
         val kx = cx + cos(endRad).toFloat() * radius
@@ -207,7 +217,7 @@ class GaugeView @JvmOverloads constructor(
         val valueBaseline = cy - (valuePaint.ascent() + valuePaint.descent()) / 2f
         canvas.drawText(valueText, cx, valueBaseline - stroke * 0.2f, valuePaint)
         if (subtitle.isNotEmpty()) {
-            canvas.drawText(subtitle, cx, valueBaseline + stroke * 1.25f, subPaint)
+            canvas.drawText(subtitle, cx, valueBaseline + stroke * 0.88f, subPaint)
         }
     }
 

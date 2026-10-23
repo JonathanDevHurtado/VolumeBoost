@@ -4,9 +4,9 @@
 
 | Versión | Soporte |
 |---|---|
-| 1.1.x | ✅ Sí |
-| 1.0.x | ⚠️ Solo correcciones críticas |
-| < 1.0 | ❌ No |
+| 1.1.x | Sí |
+| 1.0.x | Solo correcciones críticas |
+| < 1.0 | No |
 
 ## Cómo reportar una vulnerabilidad
 

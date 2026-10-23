@@ -19,12 +19,28 @@ export JAVA_HOME=/ruta/al/jdk-17
 ./gradlew --no-daemon assembleRelease bundleRelease
 ```
 
-Resultado de la última ejecución (2026-10-21):
+Resultado de la última ejecución (2026-10-23):
 
+- `assembleDebug`: **BUILD SUCCESSFUL**, APK de depuración generado
 - `testDebugUnitTest`: **BUILD SUCCESSFUL**, 17 pruebas
-- `lintDebug`: **BUILD SUCCESSFUL**, sin errores nuevos
+- `lintDebug`: **BUILD SUCCESSFUL**, 0 errores y 4 avisos
 - `assembleRelease`: **BUILD SUCCESSFUL**, APK firmado
-- `bundleRelease`: **BUILD SUCCESSFUL**, AAB firmado
+
+## Verificación del rediseño (2026-10-23)
+
+Dispositivo: **Nokia 5.4, Android 12 (API 31)**, instalación del APK debug.
+
+| Comprobación | Resultado |
+|---|---|
+| Arranque de `MainActivity` sin fallos | Correcto |
+| Atajos 100 / 110 / 125 / 150 % | El medidor, el estado y la selección cambian |
+| Botones `−` / `+` | Paso de 5 % correcto (100 → 105 %) |
+| Servicio en primer plano al superar 100 % | Activo (`isForeground=true`) |
+| Efecto de audio | `LoudnessEnhancer` en la sesión 0 confirmado con `dumpsys media.audio_flinger` |
+| Volver a 100 % | El efecto se libera y el servicio se detiene tras ~2,5 s |
+| Sonido de prueba | El botón alterna entre `Probar sonido` y `Detener prueba` |
+| Diseño vertical y horizontal | Ambas variantes se inflan y son desplazables |
+| Lint | 0 errores, 4 avisos (targetSdk, plurales y respaldo) |
 
 ## Release 1.2.0
 
@@ -59,7 +75,7 @@ repositorio; se guarda fuera y `keystore.properties` está ignorado por Git.
 - Audio real en un Redmi Note 13 Pro (HyperOS).
 - Comportamiento con audífonos Bluetooth y volumen absoluto.
 - Apps con DRM/offload (Netflix, YouTube Music, etc.).
-- Rotación, modo oscuro del sistema y tamaños de fuente grandes.
+- Tablets, tamaños de fuente grandes y modo claro forzado.
 - Permiso de notificaciones denegado en Android 13+.
 
 ## Checklist manual en dispositivo
@@ -71,8 +87,8 @@ Marca cada punto antes de publicar una release:
 - [ ] Poner el volumen multimedia al máximo.
 - [ ] Reproducir el sonido de prueba a 100 % y a 150 %; se oye la diferencia.
 - [ ] Probar con una app de música real; si no cambia, activar modo por app y reiniciar la reproducción.
-- [ ] Mantener `🔥 Subir` hasta 150 %; la aguja llega suave y suena la campanita.
-- [ ] Mantener `⬇ Bajar` hasta 100 %; el servicio se detiene tras ~2,5 s.
+- [ ] Mantener `Subir` hasta 150 %; la aguja llega suave y suena la campanita.
+- [ ] Mantener `Bajar` hasta 100 %; el servicio se detiene tras ~2,5 s.
 - [ ] Bloquear la pantalla con refuerzo activo; el audio sigue y la notificación está visible.
 - [ ] Pulsar «Volver a 100 %» en la notificación; el refuerzo se apaga.
 - [ ] Matar la app desde recientes con refuerzo activo; el refuerzo se apaga.

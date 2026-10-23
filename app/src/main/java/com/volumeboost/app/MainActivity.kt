@@ -20,6 +20,7 @@ import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.MotionEvent
 import android.view.View
+import android.widget.ImageView
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
@@ -29,17 +30,19 @@ import kotlin.math.roundToInt
 class MainActivity : Activity(), BoostEngine.Listener {
 
     private lateinit var gauge: GaugeView
-    private lateinit var btnMinus: TextView
-    private lateinit var btnPlus: TextView
+    private lateinit var btnMinus: View
+    private lateinit var btnPlus: View
     private lateinit var chips: List<TextView>
-    private lateinit var holdDown: TextView
-    private lateinit var holdUp: TextView
+    private lateinit var holdDown: View
+    private lateinit var holdUp: View
     private lateinit var swSound: Switch
     private lateinit var swMode: Switch
     private lateinit var tvVolume: TextView
     private lateinit var tvVolumeHint: TextView
     private lateinit var btnVolume: TextView
-    private lateinit var btnTest: TextView
+    private lateinit var btnTest: View
+    private lateinit var btnTestLabel: TextView
+    private lateinit var btnTestIcon: ImageView
     private lateinit var tvStatus: TextView
 
     private lateinit var prefs: SharedPreferences
@@ -76,6 +79,8 @@ class MainActivity : Activity(), BoostEngine.Listener {
         tvVolumeHint = findViewById(R.id.tvVolumeHint)
         btnVolume = findViewById(R.id.btnVolume)
         btnTest = findViewById(R.id.btnTest)
+        btnTestLabel = findViewById(R.id.btnTestLabel)
+        btnTestIcon = findViewById(R.id.btnTestIcon)
         tvStatus = findViewById(R.id.tvStatus)
 
         chips = listOf(R.id.chip100, R.id.chip110, R.id.chip125, R.id.chip150).map { id ->
@@ -390,7 +395,13 @@ class MainActivity : Activity(), BoostEngine.Listener {
     }
 
     private fun updateTestButton() {
-        btnTest.setText(if (testTone.isPlaying) R.string.test_stop else R.string.test_start)
+        val playing = testTone.isPlaying
+        val label = if (playing) R.string.test_stop else R.string.test_start
+        btnTestLabel.setText(label)
+        btnTestIcon.setImageResource(
+            if (playing) R.drawable.ic_stop else R.drawable.ic_play_arrow
+        )
+        btnTest.contentDescription = getString(label)
     }
 
     // ------------------------------------------------------------------ avisos iniciales

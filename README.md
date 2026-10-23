@@ -25,9 +25,9 @@ Hecho para el **Xiaomi Redmi Note 13 Pro 4G (Helio G99 Ultra)** y compatible con
 
 ---
 
-## 📦 Descarga
+## Descarga
 
-[![Última release](https://img.shields.io/github/v/release/JonathanDevHurtado/VolumeBoost?style=for-the-badge&label=⬇️%20Descargar)](https://github.com/JonathanDevHurtado/VolumeBoost/releases/latest)
+[![Última release](https://img.shields.io/github/v/release/JonathanDevHurtado/VolumeBoost?style=for-the-badge&label=Descargar)](https://github.com/JonathanDevHurtado/VolumeBoost/releases/latest)
 
 | Archivo | Uso |
 |---|---|
@@ -47,7 +47,7 @@ sha256sum -c SHA256SUMS.txt
 
 ## Índice
 
-- [Descarga](#-descarga)
+- [Descarga](#descarga)
 - [Qué hace](#qué-hace)
 - [Estado de verificación](#estado-de-verificación)
 - [Cómo funciona](#cómo-funciona)
@@ -67,7 +67,7 @@ sha256sum -c SHA256SUMS.txt
 
 - **Medidor circular de 100 % a 150 %** con degradado verde → amarillo → naranja → rojo.
 - **Pasos de 5 %** con botones `−` y `+`, y atajos **100 / 110 / 125 / 150 %**.
-- **Botones de mantener presionado** (`🔥 Subir` / `⬇ Bajar`): la aguja avanza de forma fluida a
+- **Botones de mantener presionado** (`Subir` / `Bajar`, con iconos de flecha): la aguja avanza de forma fluida a
   unos 10 puntos por segundo.
 - **Avisos sonoros generados por código** (sin archivos de audio): un clic cada 5 %, un bip al
   soltar y una campanita de tres notas al llegar al 150 %.
@@ -93,13 +93,15 @@ en un dispositivo físico; el checklist está en [`docs/VERIFICACION.md`](docs/V
 
 | Comprobación | Resultado |
 |---|---|
-| Compilación `assembleDebug` | ✅ correcta |
-| Pruebas unitarias `testDebugUnitTest` | ✅ 17 pruebas correctas |
-| Lint `lintDebug` | ✅ ejecutado (ver informe en CI) |
+| Compilación `assembleDebug` | Correcta |
+| Pruebas unitarias `testDebugUnitTest` | 17 pruebas correctas |
+| Lint `lintDebug` | 0 errores, 4 avisos |
 | Entorno | JDK 17.0.13 · Gradle 8.10.2 · AGP 8.7.3 · SDK 35 |
-| Prueba en teléfono físico | ⚠️ pendiente (ver checklist) |
+| Prueba en Nokia 5.4 (Android 12) | Arranque, medidor, efecto global, servicio y apagado verificados |
+| Prueba en Redmi Note 13 Pro | Pendiente (ver checklist) |
 
-La app se compiló y se probó a nivel de JVM en el entorno de desarrollo. **No se afirma** que se
+La app se compiló y se probó a nivel de JVM y en un **Nokia 5.4 con Android 12**: arranque,
+medidor, efecto global, servicio en primer plano y apagado automático. **No se afirma** que se
 haya probado en un Redmi Note 13 Pro real: eso requiere un dispositivo y está documentado como
 trabajo pendiente, no como algo ya validado.
 

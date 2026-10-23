@@ -1,10 +1,10 @@
-# 📦 Publicar una release — Volume Boost
+# Publicar una release — Volume Boost
 
 Guía del proceso usado para empaquetar y publicar las versiones oficiales.
 
 ---
 
-## 🔢 Versionado
+## Versionado
 
 Se usa [SemVer](https://semver.org/lang/es/):
 
@@ -19,7 +19,7 @@ lleva la `v`: `v1.2.0`.
 
 ---
 
-## 🔐 Firma
+## Firma
 
 La clave de release **nunca se sube al repositorio**. Debe guardarse fuera del
 proyecto, con copia de seguridad y contraseña en un gestor de secretos.
@@ -37,7 +37,7 @@ Sin ese archivo, `assembleRelease` genera un APK **sin firmar**. No se publica.
 
 ---
 
-## 🛠️ Compilar los artefactos
+## Compilar los artefactos
 
 ```bash
 export JAVA_HOME=/ruta/al/jdk-17
@@ -63,7 +63,7 @@ jarsigner -verify -verbose -certs app/build/outputs/bundle/release/app-release.a
 
 ---
 
-## 🧾 Nombres y checksums
+## Nombres y checksums
 
 Los assets se renombran con el patrón:
 
@@ -86,21 +86,21 @@ sha256sum VolumeBoost-1.2.0.apk \
 
 ---
 
-## 🚀 Publicar en GitHub
+## Publicar en GitHub
 
 1. Crear el tag y subirlo:
    ```bash
    git tag -a v1.2.0 -m "Volume Boost 1.2.0"
    git push origin main --tags
    ```
-2. Crear la release en GitHub con el título `🚀 Volume Boost 1.2.0`.
+2. Crear la release en GitHub con el título `Volume Boost 1.2.0`.
 3. Adjuntar APK, AAB, documentación, mapping y `SHA256SUMS.txt`.
 4. Marcar la release como **Latest**.
 5. Comprobar que el enlace `releases/latest` del README funciona.
 
 ---
 
-## ✅ Checklist
+## Checklist
 
 - [ ] `versionCode` y `versionName` actualizados.
 - [ ] `CHANGELOG.md` actualizado.
