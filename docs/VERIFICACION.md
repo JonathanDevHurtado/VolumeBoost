@@ -40,7 +40,7 @@ Dispositivo: **Nokia 5.4, Android 12 (API 31)**, instalación del APK debug.
 | Volver a 100 % | El efecto se libera y el servicio se detiene tras ~2,5 s |
 | Sonido de prueba | El botón alterna entre `Probar sonido` y `Detener prueba` |
 | Diseño vertical y horizontal | Ambas variantes se inflan y son desplazables |
-| Lint | 0 errores, 4 avisos (targetSdk, plurales y respaldo) |
+| Lint | 0 errores, 4 avisos (targetSdk y plurales) |
 
 ## Release 1.2.0
 
