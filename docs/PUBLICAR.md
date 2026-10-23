@@ -15,7 +15,7 @@ Se usa [SemVer](https://semver.org/lang/es/):
 | Cambio incompatible | `2.0.0` |
 
 Cada release incrementa `versionCode` en `app/build.gradle.kts`. El tag de Git
-lleva la `v`: `v1.2.0`.
+lleva la `v`: `v1.3.0`.
 
 ---
 
@@ -68,20 +68,20 @@ jarsigner -verify -verbose -certs app/build/outputs/bundle/release/app-release.a
 Los assets se renombran con el patrón:
 
 ```text
-VolumeBoost-1.2.0.apk
-VolumeBoost-1.2.0.aab
-VolumeBoost-1.2.0-docs.zip
-VolumeBoost-1.2.0-mapping.txt   # solo si hay R8
+VolumeBoost-1.3.0.apk
+VolumeBoost-1.3.0.aab
+VolumeBoost-1.3.0-docs.zip
+VolumeBoost-1.3.0-mapping.txt   # solo si hay R8
 SHA256SUMS.txt
 ```
 
 Generar el archivo de integridad:
 
 ```bash
-sha256sum VolumeBoost-1.2.0.apk \
-          VolumeBoost-1.2.0.aab \
-          VolumeBoost-1.2.0-docs.zip \
-          VolumeBoost-1.2.0-mapping.txt > SHA256SUMS.txt
+sha256sum VolumeBoost-1.3.0.apk \
+          VolumeBoost-1.3.0.aab \
+          VolumeBoost-1.3.0-docs.zip \
+          VolumeBoost-1.3.0-mapping.txt > SHA256SUMS.txt
 ```
 
 ---
@@ -90,10 +90,10 @@ sha256sum VolumeBoost-1.2.0.apk \
 
 1. Crear el tag y subirlo:
    ```bash
-   git tag -a v1.2.0 -m "Volume Boost 1.2.0"
+   git tag -a v1.3.0 -m "Volume Boost 1.3.0"
    git push origin main --tags
    ```
-2. Crear la release en GitHub con el título `Volume Boost 1.2.0`.
+2. Crear la release en GitHub con el título `Volume Boost 1.3.0`.
 3. Adjuntar APK, AAB, documentación, mapping y `SHA256SUMS.txt`.
 4. Marcar la release como **Latest**.
 5. Comprobar que el enlace `releases/latest` del README funciona.

@@ -42,6 +42,17 @@ Dispositivo: **Nokia 5.4, Android 12 (API 31)**, instalación del APK debug.
 | Diseño vertical y horizontal | Ambas variantes se inflan y son desplazables |
 | Lint | 0 errores, 4 avisos (targetSdk y plurales) |
 
+## Release 1.3.0
+
+| Artefacto | Tamaño | SHA-256 |
+|---|---:|---|
+| `VolumeBoost-1.3.0.apk` | 114 KB | `a8d0996761b31ecbe79be3b621c56d1701c6224c2b06a766d408e3aadf583c30` |
+| `VolumeBoost-1.3.0.aab` | 136 KB | `478070c7e0ab358946f0fa2e9980056214233440dd60d55843b652f91801b2cb` |
+
+Firma comprobada con `apksigner verify --print-certs` usando la misma clave de
+release que 1.2.0 (huella SHA-256 de la clave:
+`29f892a1632b31ba2b46892f778f7a84cb572c54f0694193d34ea9c88a51978b`).
+
 ## Release 1.2.0
 
 | Artefacto | Tamaño | SHA-256 |

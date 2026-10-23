@@ -4,13 +4,14 @@ Todos los cambios relevantes se documentan aquí. El formato sigue
 [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y el versionado
 [SemVer](https://semver.org/lang/es/).
 
-## [Unreleased]
+## [1.3.0] — 2026-10-23
 
 ### Añadido
 
 - Diseño de dos columnas para pantallas en horizontal.
 - Iconos vectoriales para sumar, restar, subir, bajar, reproducir, detener, volumen, sonido y modo.
 - `android:fullBackupContent="false"` para completar la política de copias de seguridad.
+- Paquete de release firmado (APK y AAB) y `VolumeBoost-1.3.0-docs.zip`.
 
 ### Cambiado
 
@@ -18,6 +19,7 @@ Todos los cambios relevantes se documentan aquí. El formato sigue
   tarjetas separadas de refuerzo manual, volumen, preferencias y prueba.
 - README, guía de publicación, verificación y seguridad sin emojis.
 - El medidor coloca las etiquetas 100 / 150 junto al arco y la de 125 dentro, separadas del subtítulo.
+- `versionCode` 4 y `versionName` 1.3.0.
 
 ### Corregido
 
@@ -69,6 +71,7 @@ release firmado y documentación descargable.
 - Pruebas unitarias de `BoostMath`.
 - Scripts de compilación e instalación para Fedora 44.
 
+[1.3.0]: https://github.com/JonathanDevHurtado/VolumeBoost/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/JonathanDevHurtado/VolumeBoost/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/JonathanDevHurtado/VolumeBoost/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/JonathanDevHurtado/VolumeBoost/releases/tag/v1.0.0
